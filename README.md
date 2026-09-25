@@ -6,7 +6,7 @@
   bosun
 </h1>
 
-## TLDR;
+## TL;DR
 One command-line tool for the chores on your computers. You or your AI agent gives the order, and
 bosun does the job and reports back the same way every time, in a form either of you can read.
 
@@ -33,6 +33,8 @@ credentials into the environment. Here they become one tool with one way of doin
 
 ## What I use it for
 
+Today these run in my old private toolkit; each one comes to bosun as a plugin after 0.1.0.
+
 - **Watch the network.** Check that the machines and services at home are reachable and healthy,
   and say plainly what isn't, in output that is pleasant to read.
 - **Handle downloads.** Hand a download to the machine that should fetch it and report how it is
@@ -42,9 +44,9 @@ credentials into the environment. Here they become one tool with one way of doin
   yours.
 - **Keep plans and notes with the project.** Update a project's roadmap and check off finished work
   in the project itself, so people and AI agents working on it find every plan in the same place.
-  If you prefer a central notes system, point it at those locations: I simply link
-  [Obsidian](https://obsidian.md) to them, and a `bosun-notes-obsidian` plugin will do that for
-  you.
+  If you prefer a central notes system, point it at those locations: I link
+  [Obsidian](https://obsidian.md) to them, and a `bosun-notes-obsidian` plugin to do that for you
+  is on the list.
 - **Manage access to credentials in one place.** Give each sailor (a plugin) the login it needs
   from your password manager at the moment it runs. You decide once, in a
   [dotenv](https://github.com/bkeepers/dotenv) file, which credentials each chore may use. The file
@@ -53,8 +55,8 @@ credentials into the environment. Here they become one tool with one way of doin
   [Kamal's secrets](https://kamal-deploy.org/docs/configuration/environment-variables/#secrets).
 - **Set up a new machine.** Show what is installed, configured and missing, and offer to fix what
   is missing, following my preferences by default and yours once you change them.
-- **Manage and monitor the NAS.** A Synology NAS, through its API where there is one and over SSH
-  where there isn't.
+- **Manage and monitor the NAS.** A [Synology](https://www.synology.com) NAS, through its API
+  where there is one and over SSH where there isn't.
 - **Manage the terminal.** Workspace and session configuration for [cmux](https://cmux.dev),
   [tmux](https://github.com/tmux/tmux) and [iTerm2](https://iterm2.com).
 - **Monitor and update self-hosted services** such as [Uptime Kuma](https://uptime.kuma.pet) and
@@ -80,10 +82,10 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
   the one [Hanami](https://hanamirb.org) is built on, and it follows Hanami's approach to loading:
   the app is [prepared, not booted](https://guides.hanamirb.org/v2.2/app/container-and-components/),
   so each component loads the first time it is used. Listing commands, showing help and completing
-  commands never load a plugin's code, so bosun stays quick to start however many plugins are
+  commands never load a plugin's code, so bosun should stay quick to start however many plugins are
   installed. [Zeitwerk](https://github.com/fxn/zeitwerk) finds the files.
 - **Pluggable.** Each job lives in a plugin, so every project, machine or container gets only the
-  plugins it needs. When bosun can't talk to something yet, a new plugin is easy to write.
+  plugins it needs. When bosun can't talk to something yet, a new plugin should be easy to write.
 - **Don't reinvent.** Use the Ruby ecosystem: pure Ruby where possible, so nothing needs compiling,
   or the system's own tools. Every command takes its input and gives its output the same way,
   which keeps bosun predictable.
@@ -110,8 +112,8 @@ which machines it may touch, before you hand it the wheel.**
 
 ## Status
 
-Early. The name is reserved on RubyGems, and the core that plugins build on is being written for
-version 0.1.0. The uses above arrive as plugins after that.
+Early. The name is [reserved on RubyGems](https://rubygems.org/gems/bosun), and the core that
+plugins build on is being written for version 0.1.0. The uses above arrive as plugins after that.
 
 ## The name
 
@@ -125,4 +127,4 @@ bring their own dependencies.
 
 ## Licence
 
-MIT. See `LICENSE.txt`.
+MIT. See [LICENSE.txt](LICENSE.txt).
