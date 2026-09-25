@@ -5,6 +5,8 @@
 
 # bosun
 
+![A three-panel comic. A polar bear bosun in a pea coat sounds a horn from the deck of a small boat; three penguin sailors in striped shirts answer "Aye, bosun!" beside coiled rope and parcels; a penguin hands the bosun a logbook and reports "All done! 3 filed, 1 fetched." under a flag showing the bosun mark.](docs/images/bosun-comic.png)
+
 On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
