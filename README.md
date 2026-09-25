@@ -7,30 +7,29 @@
 </h1>
 
 ## TLDR;
-**One command-line tool for the chores on your computers: you or your AI agent gives the order,
-bosun gets it done and reports back in the same Human or AI readable form every time.**
+One command-line tool for the chores on your computers. You or your AI agent gives the order, and
+bosun does the job and reports back the same way every time, in a form either of you can read.
 
 ## What it is
-**The captain, the first mate and the bosun.** On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
+On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
 know how to do everything bosun does; you just shouldn't have to do it by hand every time.
 
 ![A three-panel comic. A polar bear bosun in a pea coat sounds a horn from the deck of a small boat; three penguin sailors in striped shirts answer "Aye, bosun!" beside coiled rope and parcels; a penguin hands the bosun a logbook and reports "All done! 3 filed, 1 fetched." under a flag showing the bosun mark.](docs/images/bosun-comic.png)
 
-
-**You or your agent.** You can run bosun yourself, which is sometimes the best way, or teach your AI agent to use it and
+You can run bosun yourself, which is sometimes the best way, or teach your AI agent to use it and
 let the agent drive. Every command answers in the same shape: a readable table for you, or JSON for
 an agent or for another tool such as [`jq`](https://jqlang.org).
 
-**Fewer tokens.** It also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
+It also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
 it explores the system, tries commands and reads pages of their output. With bosun it runs one
-command it already knows and gets back a short, structured answer, so its effort goes into deciding
-what to do rather than rediscovering how.
+command it already knows and gets back a short, structured answer, so it spends its effort on deciding
+what to do.
 
-**One tool instead of a drawer of make-shift duck-taped scripts.** bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
-some for several, each with its own flags, its own output and its own way of getting credentials
-into the environment. Here they become one tool with one way of doing things.
+bosun replaces a drawer of makeshift, duct-taped scripts I have used for years, some for a single
+chore and some for several, each with its own flags, its own output and its own way of getting
+credentials into the environment. Here they become one tool with one way of doing things.
 
 ## What I use it for
 
@@ -39,8 +38,8 @@ into the environment. Here they become one tool with one way of doing things.
 - **Handle downloads.** Hand a download to the machine that should fetch it and report how it is
   going. A hundred other tools can do this; I like doing it from the command line.
 - **File things where they belong.** Move documents and notes into place according to filing
-  rules. The defaults are my own rules, shaped by how my brain works, not a claim that they are
-  the best way; replace them with yours.
+  rules. The defaults are my own rules, shaped by how my brain works; replace them with
+  yours.
 - **Keep plans and notes with the project.** Update a project's roadmap and check off finished work
   in the project itself, so people and AI agents working on it find every plan in the same place.
   If you prefer a central notes system, point it at those locations: I simply link
@@ -81,13 +80,13 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
   the one [Hanami](https://hanamirb.org) is built on, and it follows Hanami's approach to loading:
   the app is [prepared, not booted](https://guides.hanamirb.org/v2.2/app/container-and-components/),
   so each component loads the first time it is used. Listing commands, showing help and completing
-  commands never load a plugin's code, so bosun starts in milliseconds however many plugins are
+  commands never load a plugin's code, so bosun stays quick to start however many plugins are
   installed. [Zeitwerk](https://github.com/fxn/zeitwerk) finds the files.
 - **Pluggable.** Each job lives in a plugin, so every project, machine or container gets only the
   plugins it needs. When bosun can't talk to something yet, a new plugin is easy to write.
-- **Don't reinvent.** Use the Ruby ecosystem. Prefer pure Ruby, so nothing needs compiling, or call
-  the system's own tools, and give every command the same input, output and format, which is what
-  keeps bosun predictable.
+- **Don't reinvent.** Use the Ruby ecosystem: pure Ruby where possible, so nothing needs compiling,
+  or the system's own tools. Every command takes its input and gives its output the same way,
+  which keeps bosun predictable.
 
 ## Plugins
 
@@ -98,9 +97,9 @@ plugin, one sailor in the crew, is a Ruby gem named `bosun-*`, installed from
 
 The contract between bosun and a plugin is small, like orders on a ship: bosun passes the order
 to the crew in a known format and expects the answer back in a known shape. How the plugin gets the
-job done is up to the plugin. It should be
-[self-documenting code](https://en.wikipedia.org/wiki/Self-documenting_code), easy to read, and
-provide its own help.
+job done is up to the plugin, as long as its code is
+[self-documenting](https://en.wikipedia.org/wiki/Self-documenting_code) and it provides its own
+help.
 
 ## A sharp tool - [DANGER, DANGER](https://www.youtube.com/watch?v=R-FxmoVM7X4)
 
