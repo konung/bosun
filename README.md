@@ -6,15 +6,18 @@
   bosun
 </h1>
 
+## TLDR
 **One command-line tool for the chores on your computers: you or your AI agent gives the order,
-bosun gets it done and reports back in the same shape every time.**
+bosun gets it done and reports back in the same Human or AI readable form every time.**
 
-![A three-panel comic. A polar bear bosun in a pea coat sounds a horn from the deck of a small boat; three penguin sailors in striped shirts answer "Aye, bosun!" beside coiled rope and parcels; a penguin hands the bosun a logbook and reports "All done! 3 filed, 1 fetched." under a flag showing the bosun mark.](docs/images/bosun-comic.png)
 
 **The captain, the first mate and the bosun.** On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
 know how to do everything bosun does; you just shouldn't have to do it by hand every time.
+
+![A three-panel comic. A polar bear bosun in a pea coat sounds a horn from the deck of a small boat; three penguin sailors in striped shirts answer "Aye, bosun!" beside coiled rope and parcels; a penguin hands the bosun a logbook and reports "All done! 3 filed, 1 fetched." under a flag showing the bosun mark.](docs/images/bosun-comic.png)
+
 
 **You or your agent.** You can run bosun yourself, which is sometimes the best way, or teach your AI agent to use it and
 let the agent drive. Every command answers in the same shape: a readable table for you, or JSON for
@@ -25,7 +28,7 @@ it explores the system, tries commands and reads pages of their output. With bos
 command it already knows and gets back a short, structured answer, so its effort goes into deciding
 what to do rather than rediscovering how.
 
-**One tool instead of a drawer of scripts.** bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
+**One tool instead of a drawer of make-shift duck-taped scripts.** bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
 some for several, each with its own flags, its own output and its own way of getting credentials
 into the environment. Here they become one tool with one way of doing things.
 
