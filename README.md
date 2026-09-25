@@ -6,11 +6,11 @@
   bosun
 </h1>
 
-## TLDR
+## TLDR;
 **One command-line tool for the chores on your computers: you or your AI agent gives the order,
 bosun gets it done and reports back in the same Human or AI readable form every time.**
 
-
+## What it is
 **The captain, the first mate and the bosun.** On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
