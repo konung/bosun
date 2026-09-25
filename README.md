@@ -14,6 +14,11 @@ You can run bosun yourself, which is sometimes the best way, or teach your AI ag
 let the agent drive. Every command answers in the same shape: a readable table for you, or JSON for
 an agent or for another tool such as [`jq`](https://jqlang.org).
 
+That also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
+it explores the system, tries commands and reads pages of their output. With bosun it runs one
+command it already knows and gets back a short, structured answer, so its effort goes into deciding
+what to do rather than rediscovering how.
+
 bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
 some for several, each with its own flags, its own output and its own way of getting credentials
 into the environment. Here they become one tool with one way of doing things.
@@ -58,9 +63,12 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
   If you prefer a central notes system, point it at those locations: I simply link
   [Obsidian](https://obsidian.md) to them, and a `bosun-notes-obsidian` plugin will do that for
   you.
-- **Manage access to credentials in one place.** Give a chore the login it needs from your password
-  manager at the moment it runs. You decide once, in an `.env` file, which credentials each chore
-  may use; the file holds references to the password manager, never the secrets themselves.
+- **Manage access to credentials in one place.** Give each sailor (a plugin) the login it needs
+  from your password manager at the moment it runs. You decide once, in a
+  [dotenv](https://github.com/bkeepers/dotenv) file, which credentials each chore may use. The file
+  holds references to the password manager rather than the secrets themselves, unless you choose
+  to put a value there, an approach borrowed from
+  [Kamal's secrets](https://kamal-deploy.org/docs/configuration/environment-variables/#secrets).
 - **Set up a new machine.** Show what is installed, configured and missing, and offer to fix what
   is missing, following my preferences by default and yours once you change them.
 - **Manage and monitor the NAS.** A Synology NAS, through its API where there is one and over SSH
@@ -69,12 +77,14 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
   [tmux](https://github.com/tmux/tmux) and [iTerm2](https://iterm2.com).
 - **Monitor and update self-hosted services** such as [Uptime Kuma](https://uptime.kuma.pet) and
   [Calibre](https://calibre-ebook.com).
+- **Whatever else you need.** If it's a chore you repeat, it can become a plugin.
 
 ## Plugins
 
 I am releasing my own tools as plugins as I move them into bosun, and anyone can write more. A
-plugin is a Ruby gem named `bosun-*`, installed from [RubyGems](https://rubygems.org) or straight
-from a git repository, the way [Bundler installs gems from git](https://bundler.io/guides/git.html).
+plugin, one sailor in the crew, is a Ruby gem named `bosun-*`, installed from
+[RubyGems](https://rubygems.org) or straight from a git repository, the way
+[Bundler installs gems from git](https://bundler.io/guides/git.html).
 
 The contract between bosun and a plugin is small, like orders on a ship: bosun passes the order
 to the crew in a known format and expects the answer back in a known shape. How the plugin gets the
@@ -93,6 +103,13 @@ which machines it may touch, before you hand it the wheel.**
 
 Early. The name is reserved on RubyGems, and the core that plugins build on is being written for
 version 0.1.0. The uses above arrive as plugins after that.
+
+## The name
+
+Container tools already took their names from the waterfront: Docker from the dock worker, and
+[Kubernetes](https://kubernetes.io/docs/concepts/overview/) from the Greek for helmsman. bosun
+hands out work to the sailors on a ship, so it's named for the crew member who does that. Also, I
+like sailboats.
 
 ## Built with
 
