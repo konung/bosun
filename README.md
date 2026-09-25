@@ -71,8 +71,9 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
   habit from years of [Rails](https://rubyonrails.org/doctrine).
 - **[Ruby](https://www.ruby-lang.org).** Fast enough for anything a person or an agent is waiting
   on, and [getting faster](https://github.com/matz/spinel#computation). It runs on every system I
-  touch, it is easy to read and change, and it
-  [is designed to make programmers happy](https://www.ruby-lang.org/en/about/). It works on me.
+  touch, it is easy to read and change, and it was
+  [designed to make programmers happy](https://www.ruby-lang.org/en/about/). Years later it still
+  makes me happy, which is more than I can say for most of the software I use.
 - **dry-rb.** Commands, settings, validation and results are built on the
   [dry-rb](https://dry-rb.org) libraries, an excellent set of small, focused gems that keep bosun
   [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
