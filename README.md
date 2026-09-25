@@ -7,10 +7,12 @@
 </h1>
 
 ## TL;DR
+
 One command-line tool for the chores on your computers. You or your AI agent gives the order, and
 bosun does the job and reports back the same way every time, in a form either of you can read.
 
 ## What it is
+
 On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
@@ -24,8 +26,8 @@ an agent or for another tool such as [`jq`](https://jqlang.org).
 
 It also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
 it explores the system, tries commands and reads pages of their output. With bosun it runs one
-command it already knows and gets back a short, structured answer, so it spends its effort on deciding
-what to do.
+command it already knows and gets back a short, structured answer, so it spends its effort on
+deciding what to do.
 
 bosun replaces a drawer of makeshift, duct-taped scripts I have used for years, some for a single
 chore and some for several, each with its own flags, its own output and its own way of getting
@@ -106,9 +108,10 @@ help.
 ## A sharp tool - [DANGER, DANGER](https://www.youtube.com/watch?v=R-FxmoVM7X4)
 
 bosun runs real commands on real machines: it moves files, changes configuration and talks to your
-services with your credentials. **THAT IS THE ENTIRE POINT OF IT**, and it is also why it deserves care. **Use it at your own risk, and especially
-when an AI agent is driving it: give the agent guardrails, such as which commands it may run and
-which machines it may touch, before you hand it the wheel.**
+services with your credentials. **THAT IS THE ENTIRE POINT OF IT**, and it is also why it
+deserves care. **Use it at your own risk, and especially when an AI agent is driving it: give
+the agent guardrails, such as which commands it may run and which machines it may touch, before
+you hand it the wheel.**
 
 ## Status
 
@@ -122,9 +125,9 @@ helmsman. bosun runs the crew. Also, I like sailboats.
 
 ## Built with
 
-Ruby 3.3 or newer and the [dry-rb](https://dry-rb.org) libraries. Tests use [Minitest](https://github.com/minitest/minitest). Plugins may
-bring their own dependencies.
+Ruby 3.3 or newer and the [dry-rb](https://dry-rb.org) libraries. Tests use
+[Minitest](https://github.com/minitest/minitest). Plugins may bring their own dependencies.
 
-## Licence
+## License
 
 MIT. See [LICENSE.txt](LICENSE.txt).
