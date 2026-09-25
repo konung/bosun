@@ -29,32 +29,6 @@ what to do rather than rediscovering how.
 some for several, each with its own flags, its own output and its own way of getting credentials
 into the environment. Here they become one tool with one way of doing things.
 
-## Design choices
-
-bosun is opinionated. The choices come from years of my own experience, flaws included.
-
-- **[Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration).**
-  Sensible defaults for everything, and a config file for when you want something different. A
-  habit from years of [Rails](https://rubyonrails.org/doctrine).
-- **[Ruby](https://www.ruby-lang.org).** Fast enough for anything a person or an agent is waiting
-  on, and [getting faster](https://github.com/matz/spinel#computation). It runs on every system I
-  touch, it is easy to read and change, and it
-  [is designed to make programmers happy](https://www.ruby-lang.org/en/about/). It works on me.
-- **dry-rb.** Commands, settings, validation and results are built on the
-  [dry-rb](https://dry-rb.org) libraries, an excellent set of small, focused gems that keep bosun
-  [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
-- **Loaded the Hanami way.** bosun's container is [dry-system](https://dry-rb.org/gems/dry-system/),
-  the one [Hanami](https://hanamirb.org) is built on, and it follows Hanami's approach to loading:
-  the app is [prepared, not booted](https://guides.hanamirb.org/v2.2/app/container-and-components/),
-  so each component loads the first time it is used. Listing commands, showing help and completing
-  commands never load a plugin's code, so bosun starts in milliseconds however many plugins are
-  installed. [Zeitwerk](https://github.com/fxn/zeitwerk) finds the files.
-- **Pluggable.** Each job lives in a plugin, so every project, machine or container gets only the
-  plugins it needs. When bosun can't talk to something yet, a new plugin is easy to write.
-- **Don't reinvent.** Use the Ruby ecosystem. Prefer pure Ruby, so nothing needs compiling, or call
-  the system's own tools, and give every command the same input, output and format, which is what
-  keeps bosun predictable.
-
 ## What I use it for
 
 - **Watch the network.** Check that the machines and services at home are reachable and healthy,
@@ -84,6 +58,32 @@ bosun is opinionated. The choices come from years of my own experience, flaws in
 - **Monitor and update self-hosted services** such as [Uptime Kuma](https://uptime.kuma.pet) and
   [Calibre](https://calibre-ebook.com).
 - **Whatever else you need.** If it's a chore you repeat, it can become a plugin.
+
+## Design choices
+
+bosun is opinionated. The choices come from years of my own experience, flaws included.
+
+- **[Convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration).**
+  Sensible defaults for everything, and a config file for when you want something different. A
+  habit from years of [Rails](https://rubyonrails.org/doctrine).
+- **[Ruby](https://www.ruby-lang.org).** Fast enough for anything a person or an agent is waiting
+  on, and [getting faster](https://github.com/matz/spinel#computation). It runs on every system I
+  touch, it is easy to read and change, and it
+  [is designed to make programmers happy](https://www.ruby-lang.org/en/about/). It works on me.
+- **dry-rb.** Commands, settings, validation and results are built on the
+  [dry-rb](https://dry-rb.org) libraries, an excellent set of small, focused gems that keep bosun
+  [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+- **Loaded the Hanami way.** bosun's container is [dry-system](https://dry-rb.org/gems/dry-system/),
+  the one [Hanami](https://hanamirb.org) is built on, and it follows Hanami's approach to loading:
+  the app is [prepared, not booted](https://guides.hanamirb.org/v2.2/app/container-and-components/),
+  so each component loads the first time it is used. Listing commands, showing help and completing
+  commands never load a plugin's code, so bosun starts in milliseconds however many plugins are
+  installed. [Zeitwerk](https://github.com/fxn/zeitwerk) finds the files.
+- **Pluggable.** Each job lives in a plugin, so every project, machine or container gets only the
+  plugins it needs. When bosun can't talk to something yet, a new plugin is easy to write.
+- **Don't reinvent.** Use the Ruby ecosystem. Prefer pure Ruby, so nothing needs compiling, or call
+  the system's own tools, and give every command the same input, output and format, which is what
+  keeps bosun predictable.
 
 ## Plugins
 
