@@ -1,31 +1,35 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/bosun-mark-dark.svg">
-  <img src="docs/images/bosun-mark-light.svg" alt="bosun: a lowercase b drawn as one rope, its end hooked back over the top and its bowl coiled flat" width="56">
-</picture>
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/bosun-mark-dark.svg">
+    <img src="docs/images/bosun-mark-light.svg" alt="" width="40" align="top">
+  </picture>
+  bosun
+</h1>
 
-# bosun
+**One command-line tool for the chores on your computers: you or your AI agent gives the order,
+bosun gets it done and reports back in the same shape every time.**
 
 ![A three-panel comic. A polar bear bosun in a pea coat sounds a horn from the deck of a small boat; three penguin sailors in striped shirts answer "Aye, bosun!" beside coiled rope and parcels; a penguin hands the bosun a logbook and reports "All done! 3 filed, 1 fetched." under a flag showing the bosun mark.](docs/images/bosun-comic.png)
 
-On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
+**The captain, the first mate and the bosun.** On a ship, the captain decides where the ship goes, the first mate turns that into orders, and the
 boatswain (the bosun) passes the orders to the crew and makes sure the work gets done. On your
 computer, you are the captain, an AI agent is your first mate, and bosun is the boatswain. You
 know how to do everything bosun does; you just shouldn't have to do it by hand every time.
 
-You can run bosun yourself, which is sometimes the best way, or teach your AI agent to use it and
+**You or your agent.** You can run bosun yourself, which is sometimes the best way, or teach your AI agent to use it and
 let the agent drive. Every command answers in the same shape: a readable table for you, or JSON for
 an agent or for another tool such as [`jq`](https://jqlang.org).
 
-That also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
+**Fewer tokens.** It also saves an agent's tokens. Without bosun, an agent works out each chore from scratch:
 it explores the system, tries commands and reads pages of their output. With bosun it runs one
 command it already knows and gets back a short, structured answer, so its effort goes into deciding
 what to do rather than rediscovering how.
 
-bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
+**One tool instead of a drawer of scripts.** bosun is a rewrite and consolidation of scripts I have used for years, some for a single chore and
 some for several, each with its own flags, its own output and its own way of getting credentials
 into the environment. Here they become one tool with one way of doing things.
 
-## Principles
+## Opinions
 
 bosun is opinionated. The choices come from years of my own experience, flaws included.
 
