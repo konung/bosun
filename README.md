@@ -95,7 +95,7 @@ provide its own help.
 ## A sharp tool - [DANGER, DANGER](https://www.youtube.com/watch?v=R-FxmoVM7X4)
 
 bosun runs real commands on real machines: it moves files, changes configuration and talks to your
-services with your credentials. That is the point of it, and it is also why it deserves care. **Use it at your own risk, and especially
+services with your credentials. **THAT IS THE ENTIRE POINT OF IT**, and it is also why it deserves care. **Use it at your own risk, and especially
 when an AI agent is driving it: give the agent guardrails, such as which commands it may run and
 which machines it may touch, before you hand it the wheel.**
 
