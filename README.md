@@ -29,7 +29,7 @@ what to do rather than rediscovering how.
 some for several, each with its own flags, its own output and its own way of getting credentials
 into the environment. Here they become one tool with one way of doing things.
 
-## Opinions
+## Design choices
 
 bosun is opinionated. The choices come from years of my own experience, flaws included.
 
