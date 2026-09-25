@@ -112,10 +112,8 @@ version 0.1.0. The uses above arrive as plugins after that.
 
 ## The name
 
-Container tools already took their names from the waterfront: Docker from the dock worker, and
-[Kubernetes](https://kubernetes.io/docs/concepts/overview/) from the Greek for helmsman. bosun
-hands out work to the sailors on a ship, so it's named for the crew member who does that. Also, I
-like sailboats.
+Docker is the dock worker, [Kubernetes](https://kubernetes.io/docs/concepts/overview/) the
+helmsman. bosun runs the crew. Also, I like sailboats.
 
 ## Built with
 
